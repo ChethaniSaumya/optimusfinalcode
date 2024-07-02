@@ -98,80 +98,13 @@ export const CandyMint: FC = () => {
         }
     }, [wallet, connection, getUserSOLBalance, umi, candyMachineAddress, treasury]);
 
-    /* const onClickToken = useCallback(async () => {
- 
-         if (!wallet.publicKey) {
-             console.log('error', 'Wallet not connected!');
-             notify({ type: 'error', message: 'error', description: 'Wallet not connected!' });
-             return;
-         }
- 
-         // Fetch the Candy Machine.
-         const candyMachine = await fetchCandyMachine(
-             umi,
-             candyMachineAddress,
-         );
-         // Fetch the Candy Guard.
-         const candyGuard = await safeFetchCandyGuard(
-             umi,
-             candyMachine.mintAuthority,
-         );
- 
- 
-         // Fetch the Candy Guard.
-         const itemsRedeemed = candyMachine.itemsRedeemed;
-         console.log("itemsRedeemed :" + itemsRedeemed);
-         setItemsRedeemed(Number(itemsRedeemed));
- 
-         try {
- 
-           
-            
-             // Mint from the Candy Machine.
-             const nftMint = generateSigner(umi);
-             const transaction = await transactionBuilder()
-                 .add(setComputeUnitLimit(umi, { units: 800_000 }))
-                 .add(
-                     mintV2(umi, {
-                         candyMachine: candyMachine.publicKey,
-                         candyGuard: candyGuard?.publicKey,
-                         nftMint,
-                         collectionMint: candyMachine.collectionMint,
-                         collectionUpdateAuthority: candyMachine.authority,
-                         tokenStandard: candyMachine.tokenStandard,
- 
-                         mintArgs: {
-                             tokenPayment: some({
-                                 mint: tokenMint,
-                                 destinationAta : destinationAta
-                             }),
-                         },
-                     })
-                 );
- 
-             const { signature } = await transaction.sendAndConfirm(umi, {
-                 confirm: { commitment: "confirmed" },
-             });
-             const txid = bs58.encode(signature);
-             console.log('success', `Mint successful! ${txid}`)
-             notify({ type: 'success', message: 'Mint successful!', txid });
- 
-             getUserSOLBalance(wallet.publicKey, connection);
-         } catch (error: any) {
-             notify({ type: 'error', message: `Error minting!`, description: error?.message });
-             console.log('error', `Mint failed! ${error?.message}`);
-         }
-     }, [wallet, connection, getUserSOLBalance, umi, candyMachineAddress]);*/
-
     const onClickToken = useCallback(async () => {
         if (!wallet.publicKey) {
             console.log('error', 'Wallet not connected!');
             notify({ type: 'error', message: 'error', description: 'Wallet not connected!' });
             return;
         }
-
        
-
         // Fetch the Candy Machine.
         const candyMachine = await fetchCandyMachine(umi, candyMachineAddress);
         // Fetch the Candy Guard.
@@ -185,9 +118,6 @@ export const CandyMint: FC = () => {
         try {
             const balance = await connection.getBalance(wallet.publicKey);
             console.log(`Wallet balance: ${balance / LAMPORTS_PER_SOL} SOL`);
-
-          /*  const rentExemptBalance = await connection.getMinimumBalanceForRentExemption(AccountLayout.span);
-            console.log(`Rent-exempt balance: ${rentExemptBalance / LAMPORTS_PER_SOL} SOL`);*/
             console.log("tokenMINT :" + tokenMint);
             console.log("tokenATA :" + destinationAta);
 
@@ -211,8 +141,6 @@ export const CandyMint: FC = () => {
                         },
                     })
                 );
-
-            // console.log(`Sending transaction with accounts: ${transaction.compileMessage().accountKeys.map(account => account.toString()).join(', ')}`);
 
             const { signature } = await transaction.sendAndConfirm(umi, {
                 confirm: { commitment: "confirmed" },
