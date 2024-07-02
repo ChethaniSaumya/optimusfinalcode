@@ -26,7 +26,7 @@ const WalletContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
     const network = networkConfiguration as WalletAdapterNetwork;
     const endpoint = useMemo(() => {
         // Replace with your custom node URL or logic to fetch it
-        const customEndpoint = 'https://empty-red-lake.solana-mainnet.quiknode.pro/316f08b779efa1c73cc2a1e954373750ea5af567/';
+        const customEndpoint = process.env.NEXT_PUBLIC_RPC;
         return customEndpoint/* || clusterApiUrl(network)*/;
     }, [network]);
 
