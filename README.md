@@ -1,5 +1,5 @@
 
-# Solana Minting dApp Scaffold Next
+# Solana Minting dApp
 
 This was developed with the help of Solana dapp scaffold project
 
