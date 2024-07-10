@@ -35,6 +35,10 @@ const tt = () => {
 	window.open("https://www.tiktok.com/@optimus_coin1");
 }
 
+const github = () => {
+	window.open("https://github.com/ChethaniSaumya/optimusbadassbots");
+}
+
 const WalletMultiButtonDynamic = dynamic(
   async () => (await import('@solana/wallet-adapter-react-ui')).WalletMultiButton,
   { ssr: false }
@@ -66,6 +70,7 @@ export const AppBar: React.FC = () => {
           <img className='me' src="https://social-op.pages.dev/imgs/youtube.png" onClick={ytube}/>
           <img className='me' src="https://social-op.pages.dev/imgs/tiktok.png" onClick={tt}/>
           <img className='me' src="https://social-op.pages.dev/imgs/global.png" onClick={webL}/>
+          <img className='me' src="https://social-op.pages.dev/imgs/github.png" onClick={github}/>
 
           <WalletMultiButtonDynamic className="btn-ghost btn-sm rounded-btn text-lg mr-6 " />
         </div>
