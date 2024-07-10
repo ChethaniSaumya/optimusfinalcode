@@ -7,6 +7,34 @@ import NetworkSwitcher from './NetworkSwitcher';
 import NavElement from './nav-element';
 import me from '../assets/magiceden.png';
 
+const webL = () => {
+	window.open("https://www.optimus-coin.com/");
+}
+
+const tg = () => {
+	window.open("https://t.me/+viYwjSVwA-gyMjBi");
+}
+
+const tweet = () => {
+	window.open("https://x.com/OPT_Coin");
+}
+
+const discrd = () => {
+	window.open("https://discord.com/invite/ECbap74F");
+}
+
+const ig = () => {
+	window.open("https://www.instagram.com/optimus_coin");
+}
+
+const ytube = () => {
+	window.open("https://www.youtube.com/@Optimus_Tokens");
+}
+
+const tt = () => {
+	window.open("https://www.tiktok.com/@optimus_coin1");
+}
+
 const WalletMultiButtonDynamic = dynamic(
   async () => (await import('@solana/wallet-adapter-react-ui')).WalletMultiButton,
   { ssr: false }
@@ -31,8 +59,13 @@ export const AppBar: React.FC = () => {
         <div className="navbar-end">
           <div className="hidden md:inline-flex align-items-center justify-items gap-6">
           <img className='me' src="https://optimusassets.pages.dev/imgs/magiceden.png"/>
-          <img className='me' src="https://social-c3e.pages.dev/imgs/discord.png"/>
-          <img className='me' src="https://social-c3e.pages.dev/imgs/twitter (1).png"/>
+          <img className='me' src="https://social-c3e.pages.dev/imgs/discord.png" onClick={discrd}/>
+          <img className='me' src="https://social-c3e.pages.dev/imgs/twitter (1).png" onClick={tweet}/>
+          <img className='me' src="https://social-op.pages.dev/imgs/telegram.png" onClick={tg}/>
+          <img className='me' src="https://social-op.pages.dev/imgs/instagram.png" onClick={ig}/>
+          <img className='me' src="https://social-op.pages.dev/imgs/youtube.png" onClick={ytube}/>
+          <img className='me' src="https://social-op.pages.dev/imgs/tiktok.png" onClick={tt}/>
+          <img className='me' src="https://social-op.pages.dev/imgs/global.png" onClick={webL}/>
 
           <WalletMultiButtonDynamic className="btn-ghost btn-sm rounded-btn text-lg mr-6 " />
         </div>
