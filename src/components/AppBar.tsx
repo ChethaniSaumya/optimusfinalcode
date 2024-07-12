@@ -36,7 +36,7 @@ const tt = () => {
 }
 
 const github = () => {
-	window.open("https://github.com/ChethaniSaumya/optimusbadassbots");
+	window.open("https://github.com/ChethaniSaumya/optimusfinalcode");
 }
 
 const magicEden = () => {
