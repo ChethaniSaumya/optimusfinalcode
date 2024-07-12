@@ -39,6 +39,10 @@ const github = () => {
 	window.open("https://github.com/ChethaniSaumya/optimusbadassbots");
 }
 
+const me = () => {
+	window.open("https://magiceden.io/marketplace/optimus_badassbots");
+}
+
 const WalletMultiButtonDynamic = dynamic(
   async () => (await import('@solana/wallet-adapter-react-ui')).WalletMultiButton,
   { ssr: false }
