@@ -66,7 +66,7 @@ export const AppBar: React.FC = () => {
         {/* Wallet & Settings */}
         <div className="navbar-end">
           <div className="hidden md:inline-flex align-items-center justify-items gap-6">
-          <img className='me' src="https://optimusassets.pages.dev/imgs/magiceden.png"/>
+          <img className='me' src="https://optimusassets.pages.dev/imgs/magiceden.png" onClick={me}/>
           <img className='me' src="https://social-c3e.pages.dev/imgs/discord.png" onClick={discrd}/>
           <img className='me' src="https://social-c3e.pages.dev/imgs/twitter (1).png" onClick={tweet}/>
           <img className='me' src="https://social-op.pages.dev/imgs/telegram.png" onClick={tg}/>
